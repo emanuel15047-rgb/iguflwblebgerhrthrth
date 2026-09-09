@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CT Miami | Academia</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+:root{--blue:#087cff;--blue2:#0058e6;--bg:#050607;--panel:#0d0f12;--line:#20242a;--text:#fff;--muted:#aeb5bf}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Montserrat,Arial,sans-serif}
+a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:99;background:rgba(5,6,7,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:27px;font-weight:900;font-style:italic;letter-spacing:-1px}.logo span{color:var(--blue)}nav{display:flex;gap:24px;font-size:12px;font-weight:700}nav a:hover{color:var(--blue)}
+.btn,.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;padding:13px 18px;font-weight:800;font-size:12px;transition:.2s}
+.btn.blue,.cta{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border:1px solid var(--blue)}.btn.outline{border:1px solid var(--blue);background:transparent}.btn:hover,.cta:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.menu{display:none;background:none;border:0;color:#fff;font-size:27px}
+.hero{min-height:650px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(0,0,0,.98),rgba(0,0,0,.72) 46%,rgba(0,0,0,.25)),url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmOcGiLjpHIvXuid_QY86wL6yATZm9N3BaYyAGnf3n9tLKFWr1iU7IHP_mUQosYMXLdDr4KGLB1aAKY6Ym0uLjNo8vvGXtpPBH_t2IZLh7z2lbGC5qc-dFY5WRfrcSC3EDRa0of5Vc40_T_=w408-h629-k-no') center/cover}
+.hero h1{font-size:clamp(48px,7vw,88px);line-height:.88;letter-spacing:-4px;margin:0 0 20px;font-style:italic}.hero h1 span{color:var(--blue)}
+.hero h2{font-size:clamp(21px,3vw,31px);margin:0 0 12px}.hero h2 span{color:var(--blue)}.hero p{max-width:610px;color:#d8dce1;line-height:1.75;font-size:13px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:27px 0 42px}
+.highlights{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.highlight{font-size:10px;font-weight:700;display:flex;align-items:center;gap:8px}.icon{width:40px;height:40px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--blue);flex:none}
+section{padding:78px 0}.dark{background:#0a0c0f}.title{text-align:center;margin-bottom:40px}.title h2{font-size:clamp(29px,4vw,44px);margin:0 0 9px}.title p{color:var(--muted);font-size:13px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}.about img{width:100%;height:390px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}.about h2{font-size:35px;margin:0 0 15px}.about h2 span{color:var(--blue)}.about p{color:#c7cbd0;line-height:1.8;font-size:13px}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.plan{position:relative;padding:27px;border:1px solid #2a2e34;border-radius:13px;background:linear-gradient(145deg,#111419,#090a0c)}.plan.popular{border-color:var(--blue);transform:translateY(-7px)}.badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);padding:5px 12px;border-radius:20px;font-size:8px;font-weight:900;white-space:nowrap}
+.plan h3{text-align:center;color:var(--blue);margin:0 0 7px;font-size:22px}.plan p{text-align:center;color:#b9bec6;font-size:11px}.plan strong{display:block;text-align:center;font-size:31px;margin:20px 0}.plan small{font-size:11px;color:#999;font-weight:500}.plan ul{list-style:none;padding:0;margin:20px 0 27px;display:grid;gap:10px;color:#d9dde2;font-size:11px}.plan li:first-letter{color:var(--blue)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:26px;border:1px solid var(--line);border-radius:13px;background:#0e1013}.step{display:flex;gap:10px}.step b{font-size:11px;color:var(--blue)}.step p{font-size:10px;color:#bbb;line-height:1.5;margin:5px 0}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.review{background:#0e1013;border:1px solid var(--line);border-radius:12px;padding:22px}.stars{color:var(--blue);letter-spacing:2px}.review p{font-size:11px;color:#d1d5da;line-height:1.7}
+.contact{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}.contact-card{padding:28px;background:#0e1013;border:1px solid var(--line);border-radius:13px}.contact-card h3{color:var(--blue);margin-top:0}
+footer{border-top:1px solid var(--line);padding:25px 0;color:#7e858e;font-size:10px}.float{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--blue);box-shadow:0 8px 28px #000;z-index:80}
+@media(max-width:850px){nav{display:none}.menu{display:block}.hero{min-height:720px}.highlights{grid-template-columns:repeat(2,1fr)}.about,.contact{grid-template-columns:1fr}.plans{grid-template-columns:1fr;max-width:470px;margin:auto}.plan.popular{transform:none}.steps{grid-template-columns:1fr 1fr}.reviews{grid-template-columns:1fr}}
+@media(max-width:560px){.nav{height:64px}.logo{font-size:23px}.hero h1{letter-spacing:-2px}.actions .btn{width:100%}.highlights{grid-template-columns:1fr 1fr}section{padding:60px 0}.steps{grid-template-columns:1fr}.about img{height:280px}}
+</style>
+</head>
+<body>
+<header><div class="container nav">
+<a class="logo" href="#inicio">CT <span>MIAMI</span></a>
+<nav><a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#planos">Planos</a><a href="#estrutura">Estrutura</a><a href="#avaliacoes">Avaliações</a><a href="#contato">Contato</a></nav>
+<a class="btn blue" target="_blank" href="https://wa.me/5511934286769?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20a%20CT%20Miami.">◉ Falar no WhatsApp</a>
+<button class="menu" onclick="document.querySelector('nav').classList.toggle('mobile')">☰</button>
+</div></header>
+<style>@media(max-width:850px){nav.mobile{display:flex;position:absolute;top:64px;left:0;right:0;padding:18px;flex-direction:column;background:#090a0c;border-bottom:1px solid #20242a}}</style>
+<section id="inicio" class="hero"><div class="container">
+<h1>CT <span>MIAMI</span></h1><h2>Mais que uma academia.<br><span>Seu melhor treino, todos os dias.</span></h2>
+<p>Estrutura completa, equipamentos de alto padrão e profissionais preparados para ajudar você a conquistar seus objetivos.</p>
+<div class="actions"><a class="btn blue" target="_blank" href="https://wa.me/5511934286769?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20aula%20experimental%20na%20CT%20Miami.">◉ Agende uma aula experimental</a><a class="btn outline" href="#planos">Ver planos</a></div>
+<div class="highlights"><div class="highlight"><span class="icon">🏋</span>Equipamentos modernos</div><div class="highlight"><span class="icon">♙</span>Profissionais qualificados</div><div class="highlight"><span class="icon">▣</span>Horário flexível</div><div class="highlight"><span class="icon">♡</span>Ambiente limpo e seguro</div><div class="highlight"><span class="icon">★</span>Empresa de empreendedoras</div></div>
+</div></section>
+<section id="sobre" class="dark"><div class="container about"><img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmOcGiLjpHIvXuid_QY86wL6yATZm9N3BaYyAGnf3n9tLKFWr1iU7IHP_mUQosYMXLdDr4KGLB1aAKY6Ym0uLjNo8vvGXtpPBH_t2IZLh7z2lbGC5qc-dFY5WRfrcSC3EDRa0of5Vc40_T_=w408-h629-k-no" alt="CT Miami"><div><h2>Sobre a <span>CT Miami</span></h2><p>A CT Miami combina estrutura moderna, variedade de aulas e uma equipe preparada para oferecer uma experiência completa.</p><p>Frequentadores destacam os equipamentos, a organização, o ambiente climatizado e o atendimento dos profissionais.</p><a class="btn outline" target="_blank" href="https://wa.me/5511934286769?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20melhor%20a%20CT%20Miami%20e%20agendar%20uma%20visita.">◉ Falar com a equipe</a></div></div></section>
+<section id="planos"><div class="container"><div class="title"><h2>Nossos Planos</h2><p>Escolha o plano ideal para sua rotina.</p></div><div class="plans">
+    <article class="plan ">
+      <h3>BÁSICO</h3><p>Essencial para começar</p><strong>R$ 129,90<small>/mês</small></strong>
+      <ul><li>✓ Musculação</li><li>✓ Avaliação física</li><li>✓ Acesso à estrutura</li><li>✓ Suporte da equipe</li></ul>
+      <a class="cta" href="https://wa.me/5511934286769?text=Ol%C3%A1%21%20Gostaria%20de%20adquirir%20o%20plano%20B%C3%A1sico%20da%20CT%20Miami." target="_blank">Quero este plano <span>◉</span></a>
+    </article>
+    <article class="plan popular">
+      <span class="badge">MAIS ESCOLHIDO</span><h3>INTERMEDIÁRIO</h3><p>Mais opções para seu treino</p><strong>R$ 159,90<small>/mês</small></strong>
+      <ul><li>✓ Musculação</li><li>✓ Aulas coletivas</li><li>✓ Avaliação física</li><li>✓ Treino personalizado</li><li>✓ Suporte da equipe</li></ul>
+      <a class="cta" href="https://wa.me/5511934286769?text=Ol%C3%A1%21%20Gostaria%20de%20adquirir%20o%20plano%20Intermedi%C3%A1rio%20da%20CT%20Miami." target="_blank">Quero este plano <span>◉</span></a>
+    </article>
+    <article class="plan ">
+      <h3>PREMIUM</h3><p>Experiência completa</p><strong>R$ 199,90<small>/mês</small></strong>
+      <ul><li>✓ Musculação</li><li>✓ Aulas coletivas</li><li>✓ Muay Thai</li><li>✓ Avaliação física</li><li>✓ Treino personalizado</li><li>✓ Acompanhamento VIP</li></ul>
+      <a class="cta" href="https://wa.me/5511934286769?text=Ol%C3%A1%21%20Gostaria%20de%20adquirir%20o%20plano%20Premium%20da%20CT%20Miami." target="_blank">Quero este plano <span>◉</span></a>
+    </article></div></div></section>
+<section id="estrutura" class="dark"><div class="container"><div class="title"><h2>Como funciona?</h2><p>Comece de forma simples e rápida.</p></div><div class="steps">
+<div class="step"><span class="icon">◉</span><div><b>1. Fale conosco</b><p>Escolha seu plano pelo WhatsApp.</p></div></div>
+<div class="step"><span class="icon">▣</span><div><b>2. Agende sua visita</b><p>Conheça a CT Miami e a estrutura.</p></div></div>
+<div class="step"><span class="icon">🏋</span><div><b>3. Faça seu treino</b><p>Comece com equipamentos e aulas.</p></div></div>
+<div class="step"><span class="icon">🏆</span><div><b>4. Alcance seus objetivos</b><p>Evolua com o suporte da equipe.</p></div></div>
+</div></div></section>
+<section id="avaliacoes"><div class="container"><div class="title"><h2>O que nossos alunos dizem</h2><p>4,8 estrelas · 257 avaliações no Google</p></div><div class="reviews">
+<div class="review"><div class="stars">★★★★★</div><p>“Academia incrível, ótimo ambiente, máquinas tudo!”</p><b>Aluno CT Miami</b></div>
+<div class="review"><div class="stars">★★★★★</div><p>“Estrutura impecável, espaçoso, máquinas de primeira linha.”</p><b>Aluno CT Miami</b></div>
+<div class="review"><div class="stars">★★★★★</div><p>“Máquinas atuais e personal trainers super dedicados.”</p><b>Isabel F.</b></div>
+</div></div></section>
+<section id="contato" class="dark"><div class="container contact">
+<div class="contact-card"><h3>CT Miami</h3><p>Av. Nove de Julho, 585 — Bela Vista<br>São Paulo — SP, 01313-000</p><p>📞 (11) 93428-6769</p><p>📸 @ctmiamioficial</p><p>Aberto · fecha 23:00</p></div>
+<div class="contact-card"><h3>Fale com a CT Miami</h3><p>Quer conhecer a academia, agendar uma aula ou saber sobre os planos?</p><a class="cta" target="_blank" href="https://wa.me/5511934286769?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20CT%20Miami%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20planos.">◉ Falar no WhatsApp</a></div>
+</div></section>
+<footer><div class="container">© 2026 CT Miami — Prévia demonstrativa.</div></footer>
+<a class="float" target="_blank" href="https://wa.me/5511934286769?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20CT%20Miami%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." aria-label="WhatsApp">◉</a>
+</body></html>
